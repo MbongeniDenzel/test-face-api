@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Vanilla JavaScript App</title>
+    <script> 
+    (async function() {
+        const { text } = await( 
+          await fetch(`/api/message`)).json();
+        document.querySelector('#name').textContent = text;
+    }());
+    </script>
+    <script defer src="face-api.min.js"> </script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
     <main>
     <h1>Vanilla JavaScript App</h1>
     <p>Loading content from the API: <b id="name">...</b></p>
+    <input type="file" id ="imageUpload">
+    <video id="video" width="720" height="560" autoplay muted></video>
+    <button id="startButton">Start</button>
     </main>
 
-    <script>
-    (async function() {
-        const { text } = await( await fetch(`/api/message`)).json();
-        document.querySelector('#name').textContent = text;
-    }());
-    </script>
+    
 </body>
 
 </html>

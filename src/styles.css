@@ -7,8 +7,14 @@ html, body {
   border: 0;
   padding: 0;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
+canvas{
+  position: absolute;
+}
 main {
   margin: auto;
   width: 50%;
